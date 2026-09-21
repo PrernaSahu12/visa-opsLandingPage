@@ -19,9 +19,9 @@ export function Navbar({ onOpenCreateWorkspace, onOpenDemo }) {
   }, []);
 
   const navLinks = [
-    { label: "Features", href: "/features" },
     { label: "Solutions", href: "/solutions" },
     { label: "Workflow DAG", href: "/workflow" },
+    { label: "Features", href: "/features" },
     { label: "Governance", href: "/governance" },
     { label: "Security", href: "/security" },
   ];

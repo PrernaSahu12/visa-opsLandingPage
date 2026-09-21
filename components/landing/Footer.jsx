@@ -35,8 +35,8 @@ export function Footer({ onOpenCreateWorkspace, onOpenDemo }) {
             </h4>
             <ul className="space-y-2 text-[#94A3B8]">
               <li>
-                <a href="/features" className="hover:text-white transition-colors">
-                  Features
+                <a href="/solutions" className="hover:text-white transition-colors">
+                  Solutions
                 </a>
               </li>
               <li>
@@ -45,8 +45,8 @@ export function Footer({ onOpenCreateWorkspace, onOpenDemo }) {
                 </a>
               </li>
               <li>
-                <a href="/solutions" className="hover:text-white transition-colors">
-                  Solutions
+                <a href="/features" className="hover:text-white transition-colors">
+                  Features
                 </a>
               </li>
             </ul>
