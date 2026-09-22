@@ -1,19 +1,14 @@
-"use client";
-
 import React, { useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
-import { Hero } from "@/components/landing/Hero";
-import { TrustStrip } from "@/components/landing/TrustStrip";
-import { ProblemSection } from "@/components/landing/ProblemSection";
-import { PlatformModules } from "@/components/landing/PlatformModules";
-import { ComplianceMapBanner } from "@/components/landing/ComplianceMapBanner";
-import { SecuritySection } from "@/components/landing/SecuritySection";
+import { SecurityHero } from "@/components/security/SecurityHero";
+import { SecurityPillars } from "@/components/security/SecurityPillars";
+import { SecurityComplianceCertifications } from "@/components/security/SecurityComplianceCertifications";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { CreateWorkspaceModal } from "@/components/landing/modals/CreateWorkspaceModal";
 import { DemoModal } from "@/components/landing/modals/DemoModal";
 
-export default function LandingPage() {
+export default function SecurityPage() {
   const [isCreateWorkspaceOpen, setIsCreateWorkspaceOpen] = useState(false);
   const [isDemoOpen, setIsDemoOpen] = useState(false);
 
@@ -31,28 +26,29 @@ export default function LandingPage() {
         onOpenDemo={openDemo}
       />
 
-      {/* Main Sections */}
-      <Hero
+      {/* Security Hero with Live Multi-Tenant Defense Console */}
+      <SecurityHero
+        onOpenDemo={openDemo}
         onOpenCreateWorkspace={openCreateWorkspace}
+      />
+
+      {/* 4 Core Defense Layers (Horizontal Panoramic Cards) */}
+      <SecurityPillars
         onOpenDemo={openDemo}
       />
 
-      <TrustStrip />
+      {/* GCC & International Compliance Frameworks (UAE PDPL, Saudi NDMO, ISO 27001) */}
+      <SecurityComplianceCertifications
+        onOpenDemo={openDemo}
+      />
 
-      <ProblemSection />
-
-      <PlatformModules onOpenDemo={openDemo} />
-
-      <ComplianceMapBanner onOpenDemo={openDemo} />
-
-      <SecuritySection />
-
+      {/* Enterprise Bottom Conversion CTA */}
       <FinalCTA
         onOpenCreateWorkspace={openCreateWorkspace}
         onOpenDemo={openDemo}
       />
 
-      {/* Enterprise Footer */}
+      {/* Global Enterprise Footer */}
       <Footer
         onOpenCreateWorkspace={openCreateWorkspace}
         onOpenDemo={openDemo}
@@ -64,7 +60,10 @@ export default function LandingPage() {
         onClose={closeCreateWorkspace}
       />
 
-      <DemoModal isOpen={isDemoOpen} onClose={closeDemo} />
+      <DemoModal
+        isOpen={isDemoOpen}
+        onClose={closeDemo}
+      />
     </main>
   );
 }

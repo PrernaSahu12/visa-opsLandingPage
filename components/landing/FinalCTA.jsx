@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, ShieldCheck, Sparkles } from "lucide-react";
 
 export function FinalCTA({ onOpenCreateWorkspace, onOpenDemo }) {
@@ -28,13 +29,13 @@ export function FinalCTA({ onOpenCreateWorkspace, onOpenDemo }) {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-          <button
-            onClick={onOpenCreateWorkspace}
+          <Link
+            to="/get-started"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#1747E8] hover:bg-blue-700 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer"
           >
-            <span>Create Your Workspace</span>
+            <span>Request a Free Demo</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
           <button
             onClick={onOpenDemo}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white border border-slate-300 text-[#102A56] font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 shadow-xs transition-all active:scale-95 cursor-pointer"

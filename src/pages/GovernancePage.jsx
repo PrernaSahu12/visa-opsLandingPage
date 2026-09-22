@@ -1,16 +1,14 @@
-"use client";
-
 import React, { useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
-import { FeaturesHero } from "@/components/features/FeaturesHero";
-import { FeaturesZigZag } from "@/components/features/FeaturesZigZag";
-import { FeaturesBentoGrid } from "@/components/features/FeaturesBentoGrid";
+import { GovernanceHero } from "@/components/governance/GovernanceHero";
+import { GovernancePillars } from "@/components/governance/GovernancePillars";
+import { GovernanceAuditConsole } from "@/components/governance/GovernanceAuditConsole";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { CreateWorkspaceModal } from "@/components/landing/modals/CreateWorkspaceModal";
 import { DemoModal } from "@/components/landing/modals/DemoModal";
 
-export default function FeaturesPage() {
+export default function GovernancePage() {
   const [isCreateWorkspaceOpen, setIsCreateWorkspaceOpen] = useState(false);
   const [isDemoOpen, setIsDemoOpen] = useState(false);
 
@@ -21,28 +19,26 @@ export default function FeaturesPage() {
   const closeDemo = () => setIsDemoOpen(false);
 
   return (
-    <main className="min-h-screen bg-white text-[#102A56] flex flex-col selection:bg-[#1747E8]/20 selection:text-[#1747E8]">
+    <main className="min-h-screen bg-white text-[#172B4D] flex flex-col selection:bg-[#1747E8]/20 selection:text-[#1747E8]">
       {/* Sticky Header */}
       <Navbar
         onOpenCreateWorkspace={openCreateWorkspace}
         onOpenDemo={openDemo}
       />
 
-      {/* 1. Feature Page Hero Section */}
-      <FeaturesHero
+      {/* Governance Hero with Live Dual-Control Simulator */}
+      <GovernanceHero
+        onOpenDemo={openDemo}
         onOpenCreateWorkspace={openCreateWorkspace}
+      />
+
+      {/* 4 Core Governance Pillars (Horizontal Panoramic Cards) */}
+      <GovernancePillars
         onOpenDemo={openDemo}
       />
 
-      {/* 2. Main Features (Zig-Zag Layout) */}
-      <FeaturesZigZag
-        onOpenCreateWorkspace={openCreateWorkspace}
-        onOpenDemo={openDemo}
-      />
-
-      {/* 3. Platform Pillars (3-Column Bento Grid Layout) */}
-      <FeaturesBentoGrid
-        onOpenCreateWorkspace={openCreateWorkspace}
+      {/* Real-time Audit Console & Compliance Ledger */}
+      <GovernanceAuditConsole
         onOpenDemo={openDemo}
       />
 
@@ -52,7 +48,7 @@ export default function FeaturesPage() {
         onOpenDemo={openDemo}
       />
 
-      {/* Public Footer */}
+      {/* Global Footer */}
       <Footer
         onOpenCreateWorkspace={openCreateWorkspace}
         onOpenDemo={openDemo}
@@ -63,6 +59,7 @@ export default function FeaturesPage() {
         isOpen={isCreateWorkspaceOpen}
         onClose={closeCreateWorkspace}
       />
+
       <DemoModal
         isOpen={isDemoOpen}
         onClose={closeDemo}

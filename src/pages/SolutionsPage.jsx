@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import { SolutionsHero } from "@/components/solutions/SolutionsHero";

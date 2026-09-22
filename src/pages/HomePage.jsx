@@ -1,16 +1,17 @@
-"use client";
-
 import React, { useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
-import { GovernanceHero } from "@/components/governance/GovernanceHero";
-import { GovernancePillars } from "@/components/governance/GovernancePillars";
-import { GovernanceAuditConsole } from "@/components/governance/GovernanceAuditConsole";
+import { Hero } from "@/components/landing/Hero";
+import { TrustStrip } from "@/components/landing/TrustStrip";
+import { ProblemSection } from "@/components/landing/ProblemSection";
+import { PlatformModules } from "@/components/landing/PlatformModules";
+import { ComplianceMapBanner } from "@/components/landing/ComplianceMapBanner";
+import { SecuritySection } from "@/components/landing/SecuritySection";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { CreateWorkspaceModal } from "@/components/landing/modals/CreateWorkspaceModal";
 import { DemoModal } from "@/components/landing/modals/DemoModal";
 
-export default function GovernancePage() {
+export default function HomePage() {
   const [isCreateWorkspaceOpen, setIsCreateWorkspaceOpen] = useState(false);
   const [isDemoOpen, setIsDemoOpen] = useState(false);
 
@@ -28,29 +29,28 @@ export default function GovernancePage() {
         onOpenDemo={openDemo}
       />
 
-      {/* Governance Hero with Live Dual-Control Simulator */}
-      <GovernanceHero
-        onOpenDemo={openDemo}
+      {/* Main Sections */}
+      <Hero
         onOpenCreateWorkspace={openCreateWorkspace}
-      />
-
-      {/* 4 Core Governance Pillars (Horizontal Panoramic Cards) */}
-      <GovernancePillars
         onOpenDemo={openDemo}
       />
 
-      {/* Real-time Audit Console & Compliance Ledger */}
-      <GovernanceAuditConsole
-        onOpenDemo={openDemo}
-      />
+      <TrustStrip />
 
-      {/* Bottom Conversion CTA */}
+      <ProblemSection />
+
+      <PlatformModules onOpenDemo={openDemo} />
+
+      <ComplianceMapBanner onOpenDemo={openDemo} />
+
+      <SecuritySection />
+
       <FinalCTA
         onOpenCreateWorkspace={openCreateWorkspace}
         onOpenDemo={openDemo}
       />
 
-      {/* Global Footer */}
+      {/* Enterprise Footer */}
       <Footer
         onOpenCreateWorkspace={openCreateWorkspace}
         onOpenDemo={openDemo}
@@ -62,10 +62,7 @@ export default function GovernancePage() {
         onClose={closeCreateWorkspace}
       />
 
-      <DemoModal
-        isOpen={isDemoOpen}
-        onClose={closeDemo}
-      />
+      <DemoModal isOpen={isDemoOpen} onClose={closeDemo} />
     </main>
   );
 }

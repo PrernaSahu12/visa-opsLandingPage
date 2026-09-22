@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function Footer({ onOpenCreateWorkspace, onOpenDemo }) {
   return (
@@ -10,7 +11,7 @@ export function Footer({ onOpenCreateWorkspace, onOpenDemo }) {
           
           {/* Col 1: Brand (spans 2 cols on md+) */}
           <div className="col-span-2 space-y-3">
-            <a href="/" className="inline-block">
+            <Link to="/" className="inline-block">
               <div className="bg-white px-2.5 py-1.5 rounded-lg shadow-sm w-fit">
                 <img
                   src="/images/vyxel-logo.png"
@@ -18,7 +19,7 @@ export function Footer({ onOpenCreateWorkspace, onOpenDemo }) {
                   className="h-6 w-auto object-contain"
                 />
               </div>
-            </a>
+            </Link>
             <p className="text-xs text-[#94A3B8] leading-relaxed max-w-sm">
               Deterministic operating system for visa processing, document governance, and cross-border manpower operations.
             </p>
@@ -35,19 +36,19 @@ export function Footer({ onOpenCreateWorkspace, onOpenDemo }) {
             </h4>
             <ul className="space-y-2 text-[#94A3B8]">
               <li>
-                <a href="/solutions" className="hover:text-white transition-colors">
+                <Link to="/solutions" className="hover:text-white transition-colors">
                   Solutions
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/workflow" className="hover:text-white transition-colors">
+                <Link to="/workflow" className="hover:text-white transition-colors">
                   Workflow DAG
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/features" className="hover:text-white transition-colors">
+                <Link to="/features" className="hover:text-white transition-colors">
                   Features
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -59,14 +60,14 @@ export function Footer({ onOpenCreateWorkspace, onOpenDemo }) {
             </h4>
             <ul className="space-y-2 text-[#94A3B8]">
               <li>
-                <a href="/governance" className="hover:text-white transition-colors">
+                <Link to="/governance" className="hover:text-white transition-colors">
                   Document Governance
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/security" className="hover:text-white transition-colors">
+                <Link to="/security" className="hover:text-white transition-colors">
                   Security Architecture
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -74,14 +75,19 @@ export function Footer({ onOpenCreateWorkspace, onOpenDemo }) {
           {/* Col 4: Action & Access */}
           <div className="space-y-2.5 col-span-2 sm:col-span-1">
             <h4 className="text-xs font-bold text-white tracking-wider">
-              Get Started
+              Request a Demo
             </h4>
             <ul className="space-y-2 text-[#94A3B8]">
               <li>
-                <a href="/get-started" className="hover:text-white transition-colors text-blue-400 font-semibold inline-flex items-center gap-1">
-                  <span>Create Workspace</span>
+                <Link to="/get-started" className="hover:text-white transition-colors text-blue-400 font-semibold inline-flex items-center gap-1">
+                  <span>Request a Free Demo</span>
                   <span>→</span>
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition-colors">
+                  Contact Sales
+                </Link>
               </li>
               <li>
                 <button

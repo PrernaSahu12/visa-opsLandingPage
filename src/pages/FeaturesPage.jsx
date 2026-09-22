@@ -1,15 +1,14 @@
-"use client";
-
 import React, { useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
-import { WorkflowHero } from "@/components/workflow/WorkflowHero";
-import { WorkflowStoryTimeline } from "@/components/workflow/WorkflowStoryTimeline";
+import { FeaturesHero } from "@/components/features/FeaturesHero";
+import { FeaturesZigZag } from "@/components/features/FeaturesZigZag";
+import { FeaturesBentoGrid } from "@/components/features/FeaturesBentoGrid";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { CreateWorkspaceModal } from "@/components/landing/modals/CreateWorkspaceModal";
 import { DemoModal } from "@/components/landing/modals/DemoModal";
 
-export default function WorkflowPage() {
+export default function FeaturesPage() {
   const [isCreateWorkspaceOpen, setIsCreateWorkspaceOpen] = useState(false);
   const [isDemoOpen, setIsDemoOpen] = useState(false);
 
@@ -20,31 +19,38 @@ export default function WorkflowPage() {
   const closeDemo = () => setIsDemoOpen(false);
 
   return (
-    <main className="min-h-screen bg-white text-[#172B4D] flex flex-col selection:bg-[#1747E8]/20 selection:text-[#1747E8]">
+    <main className="min-h-screen bg-white text-[#102A56] flex flex-col selection:bg-[#1747E8]/20 selection:text-[#1747E8]">
       {/* Sticky Header */}
       <Navbar
         onOpenCreateWorkspace={openCreateWorkspace}
         onOpenDemo={openDemo}
       />
 
-      {/* Hero Section matching Fintech PaymentSource Hero */}
-      <WorkflowHero
-        onOpenDemo={openDemo}
+      {/* 1. Feature Page Hero Section */}
+      <FeaturesHero
         onOpenCreateWorkspace={openCreateWorkspace}
-      />
-
-      {/* New Vertical Scroll-Linked Storytelling Timeline */}
-      <WorkflowStoryTimeline
         onOpenDemo={openDemo}
       />
 
-      {/* High-Converting Bottom CTA */}
+      {/* 2. Main Features (Zig-Zag Layout) */}
+      <FeaturesZigZag
+        onOpenCreateWorkspace={openCreateWorkspace}
+        onOpenDemo={openDemo}
+      />
+
+      {/* 3. Platform Pillars (3-Column Bento Grid Layout) */}
+      <FeaturesBentoGrid
+        onOpenCreateWorkspace={openCreateWorkspace}
+        onOpenDemo={openDemo}
+      />
+
+      {/* Bottom Conversion CTA */}
       <FinalCTA
         onOpenCreateWorkspace={openCreateWorkspace}
         onOpenDemo={openDemo}
       />
 
-      {/* Enterprise Footer */}
+      {/* Public Footer */}
       <Footer
         onOpenCreateWorkspace={openCreateWorkspace}
         onOpenDemo={openDemo}
