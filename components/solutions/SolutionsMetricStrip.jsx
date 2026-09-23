@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 import { Clock, ShieldCheck, MessageSquare, Award } from "lucide-react";
